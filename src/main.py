@@ -1,14 +1,26 @@
-from fastapi import FastAPI, HTTPException
-from src.agent import MarketAgent
-from src.schemas import MarketRequest, MarketResponse
+from fastapi import FastAPI
+from src.agent import build_agent
+from src.schemas import AnalysisRequest, AnalysisResponse
 
-app = FastAPI(title="Market Intelligence Agent")
+app = FastAPI(title="Sneaky Salesman: market analysis agent")
 
-agent = MarketAgent()
+agent = build_agent()
 
-@app.post("/analyze", response_model=MarketResponse)
-def analyze_market(request: MarketRequest):
-    try:
-        return agent.run(request)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+
+@app.post("/analyze", response_model=AnalysisResponse)
+def analyze(request: AnalysisRequest):
+    result = agent.invoke({
+        "product": request.product,
+        "location": request.location,
+    })
+    return {
+        "status": "success",
+        "product": request.product,
+        "location": request.location,
+        "report": result["report"],
+    }
+
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
