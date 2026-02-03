@@ -1,20 +1,27 @@
-class ReportGeneratorTool:
-    def run(self, product_data, sentiment_data, trend_data):
+from src.llm import llm_generate
+from src.schemas import FinalReport
 
-        recommendations = []
 
-        if sentiment_data["score"] > 0.6:
-            recommendations.append("Emphasize product quality in marketing")
+def generate_report(product: str, data: dict) -> FinalReport:
+    prompt = f"""
+    You are a market analyst.
 
-        if trend_data["trend"] == "growing":
-            recommendations.append("Invest in this growing market")
+    Product: {product}
+    Data: {data}
 
-        return {
-            "product": "Analyzed Product",
-            "insights": {
-                "product_data": product_data,
-                "sentiment": sentiment_data,
-                "trend": trend_data
-            },
-            "recommendations": recommendations
-        }
+    Generate:
+    - Executive summary
+    - 3 business recommendations
+    """
+
+    text = llm_generate(prompt)
+
+    return FinalReport(
+        summary=text,
+        insights=data,
+        recommendations=[
+            "Maintain premium pricing",
+            "Emphasize battery life in marketing",
+            "Monitor competitor discounts",
+        ],
+    )
