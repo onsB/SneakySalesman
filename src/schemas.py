@@ -1,11 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Literal, TypedDict
 
-
-class AnalysisRequest(BaseModel):
-    product: str
-    location: str = "global"
-
 class InitialRequest(BaseModel):
     request: str
 
