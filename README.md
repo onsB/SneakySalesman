@@ -9,7 +9,7 @@ Market analysis agent built with FastAPI and LangGraph. It exposes a simple API 
 - Container-friendly setup with `uv`
 
 ### Requirements
-- Python 3.12+
+- Python 3.13+
 - Cohere API Key
 - Optional: Docker
 
