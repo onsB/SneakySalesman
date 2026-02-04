@@ -17,8 +17,8 @@ Market analysis agent built with FastAPI and LangGraph. It exposes a simple API 
 Generate a Cohere API key (very accessible through free trial here: https://docs.aicontentlabs.com/articles/cohere-api-key/)
 
 ### Local setup
-1. Install uv: `pip install uv`
-2. Create a virtual environment and install dependencies: `uv sync`
+1. Install uv: `pip install uv` (terminal)
+2. Create a virtual environment and install dependencies with one command: `uv sync` (terminal)
 3. Create a .env file under ./ and add the Cohere API key in it as follows:
 `COHERE_API_KEY="SAMPLEKEYVALUE"`
 4. Run the app with FastAPI or Uvicorn.
