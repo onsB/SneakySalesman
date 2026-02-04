@@ -5,8 +5,9 @@ from typing import List, Dict, Any, Literal, TypedDict
 class AnalysisRequest(BaseModel):
     product: str
     location: str = "global"
-    depth: str = "standard"
 
+class InitialRequest(BaseModel):
+    request: str
 
 class ProductInfo(TypedDict):
     product: str
