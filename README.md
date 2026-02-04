@@ -58,6 +58,6 @@ curl -X POST http://localhost:8000/analyze \
 	- Dell XPS 13
 	- Acer Aspire 5
 	- HP Spectre x360
-- A demo is available in [sneakysalesman_demo_screenshots.pptx](sneakysalesman_demo_screenshots.pptx).
+- A demo is available in [sneakysalesman_demo_screenshots.pptx](SneakySalesman_demo_screenshots.pptx).
 - API tests are documented in [API_TESTING_GUIDE.md](API_TESTING_GUIDE.md).
 - Agent orchestration details are in [ORCHESTRATION_GUIDE.md](ORCHESTRATION_GUIDE.md).
