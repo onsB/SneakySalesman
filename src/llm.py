@@ -19,7 +19,3 @@ def llm_generate(prompt: str, temperature: float = 0.3) -> str:
         temperature=temperature,
     )
     return response.text
-
-# res = llm_generate("write a nice paragraph about running a sneaky sales business")
-res = llm_generate("Analyze the market for wireless earbuds in France")
-res
