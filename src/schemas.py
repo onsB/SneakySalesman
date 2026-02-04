@@ -29,18 +29,6 @@ class TrendResult(BaseModel):
     demand_trend: str
 
 
-class FinalReport(BaseModel):
-    summary: str
-    insights: Dict[str, Any]
-    recommendations: List[str]
-
-class AnalysisResponse(BaseModel):
-    status: str
-    product: str
-    location: str
-    report: FinalReport
-
-
 class PriceHistoryPoint(TypedDict):
     product: str
     date: str
