@@ -47,3 +47,6 @@ class DemandTrendPoint(TypedDict):
 
 class DemandHistory(BaseModel):
     history: List[DemandTrendPoint]
+
+class AnalysisResponse(BaseModel):
+    data: str
