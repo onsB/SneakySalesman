@@ -4,9 +4,9 @@ Market analysis agent built with FastAPI and LangGraph. It exposes a simple API 
 
 ### Features
 - FastAPI service for analysis requests
-- LangGraph-based agent orchestration
+- LangGraph-based agent orchestration (clear, testable graph flow for multi-step analysis, easy to use and well structured)
 - Modular agent and utilities under `src/`
-- Container-friendly setup with `uv`
+- Container-friendly setup with `uv` (fast, deterministic installs and lockfile-based sync, manages dependencies seamlessly with every new addition in the requirements)
 
 ### Requirements
 - Python 3.13+
