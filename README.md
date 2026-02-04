@@ -4,6 +4,7 @@ Market analysis agent built with FastAPI and LangGraph. It exposes a simple API 
 
 ### Features
 - FastAPI service for analysis requests
+- LangGraph-based agent orchestration
 - Modular agent and utilities under `src/`
 - Container-friendly setup with `uv`
 
