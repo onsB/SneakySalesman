@@ -13,13 +13,7 @@ def analyze(request: AnalysisRequest):
         "product": request.product,
         "location": request.location,
     })
-    return {
-        "status": "success",
-        "product": request.product,
-        "location": request.location,
-        "report": result["report"],
-    }
-
+    return AnalysisResponse(data=result["report"])
 
 @app.get("/health")
 def health():
